@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public class Shooter {
+public class Shooter implements Conditions{
+    @Override
+    public void changingTheState() {
+        System.out.println("Condition is Shooter.");
+    }
 }
