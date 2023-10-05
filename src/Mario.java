@@ -2,7 +2,11 @@ public class Mario {
     Conditions conditions;
 
     public Mario(){
-        this.conditions = new Base();
+        this.conditions = new Base(this);
+    }
+
+    public void setConditions(Conditions conditions) {
+        this.conditions = conditions;
     }
 
     public void changeConditions() {
@@ -18,11 +22,11 @@ public class Mario {
     }
 
     public void powerUp(){
-        this.conditions = this.conditions.powerUp();
+        conditions.powerUp();
     }
 
     public void powerDown(){
-        this.conditions = this.conditions.powerDown();
+        conditions.powerDown();
     }
 
 

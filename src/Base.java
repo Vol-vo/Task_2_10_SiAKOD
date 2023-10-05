@@ -1,17 +1,21 @@
 public class Base extends Conditions {
+
+    public Base(Mario mario) {
+        super(mario);
+    }
+
     @Override
     public void changingTheState() {
         System.out.println("Condition is Base.");
     }
 
     @Override
-    public Conditions powerUp() {
+    public void powerUp() {
         System.out.println("Power up! ");
-        return new BasePlus();
+        mario.setConditions(new BasePlus(mario));
     }
 
-    public Conditions powerDown() {
+    public void powerDown() {
         System.out.println("Power not down! Power is minimum. ");
-        return new Base();
     }
 }

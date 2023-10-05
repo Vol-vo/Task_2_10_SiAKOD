@@ -1,19 +1,21 @@
 public class Shooter extends Conditions{
+    public Shooter(Mario mario) {
+        super(mario);
+    }
     @Override
     public void changingTheState() {
         System.out.println("Condition is Shooter.");
     }
 
     @Override
-    public Conditions powerDown() {
+    public void powerDown() {
         System.out.println("Power Down! ");
-        return new BasePlus();
+        mario.setConditions(new BasePlus(mario));
     }
 
     @Override
-    public Conditions powerUp() {
+    public void powerUp() {
         System.out.println("Power not Up! Power is max! ");
-        return new Shooter();
     }
 
     public void shoot(){

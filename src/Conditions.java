@@ -1,14 +1,15 @@
 public abstract class Conditions {
 
+    protected Mario mario;
+    public Conditions(Mario mario) {
+        this.mario = mario;
+    }
+
     public void changingTheState() {}
 
-    public Conditions powerUp(){
-        return null;
-    }
+    public abstract void powerUp();
 
-    public Conditions powerDown(){
-        return null;
-    }
+    public abstract void powerDown();
 
     public void shoot(){}
 
