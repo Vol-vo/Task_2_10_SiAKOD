@@ -2,48 +2,30 @@ public class Mario {
     Conditions conditions;
 
     public Mario(){
-        conditions = new Base();
+        this.conditions = new Base();
     }
 
     public void changeConditions() {
-        conditions.changingTheState();
+        this.conditions.changingTheState();
     }
 
     public void jump() {
-        System.out.println("Mario jump!");
+        this.conditions.jump();
     }
 
     public void shoot() {
-        if (conditions instanceof Shooter) {
-           System.out.println("Mario shoot!");
-        }else{
-            System.out.println("Mario is not shoot!");
-        }
+        this.conditions.shoot();
     }
 
     public void powerUp(){
-        if (conditions instanceof Base){
-            conditions = new BasePlus();
-            System.out.println("Now Mario very big");
-        }
-        else if (conditions instanceof BasePlus){
-            conditions = new Shooter();
-            System.out.println("Now Mario is Shooter");
-        }else {
-            System.out.println("Now Mario max level!");
-        }
+        this.conditions = this.conditions.powerUp();
     }
 
     public void powerDown(){
-        if (conditions instanceof Shooter){
-            conditions = new BasePlus();
-            System.out.println("Now Mario not Shooter!");
-        }
-        else if (conditions instanceof BasePlus){
-            conditions = new Base();
-            System.out.println("Now Mario is Base");
-        }else {
-            System.out.println("Now Mario low level!");
-        }
+        this.conditions = this.conditions.powerDown();
     }
+
+
+
+
 }
